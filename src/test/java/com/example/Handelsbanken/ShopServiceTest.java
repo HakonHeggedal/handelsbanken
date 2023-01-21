@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ShopServiceTest {
 
 
-    ShopService shopService = new ShopService();
+    ShopService shopService = new ShopService(); // TODO: denne kunne vært autowiret inn
 
     @Test
     void calculateCostStandardExample() {

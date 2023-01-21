@@ -1,0 +1,32 @@
+base code created with https://start.spring.io/
+
+how to run:
+Run the HandelsbankenApplication (Spring boot Java 17 application)
+
+Request
+POST http://localhost:8080/checkout
+# Headers
+Accept: application/json
+Content-Type: application/json
+# Body
+[
+"001",
+"002",
+"001",
+"004",
+"003"
+]
+--> {
+        "price": 360
+    }
+
+I created unit tests in ShopServiceTest, they cover most of the logic.
+
+Improvements:
+* Swagger for the Rest endpoints, i didn't prioritize this
+* documented endpoints, would be easier with swagger, but not prioritized
+* running the tests with autowired service
+* more proper logging of events
+
+* for bigger projects grouping the objects in DTOs (Cost) and internal objects (Watch)
+* not really made for communicating with database so that would require som refactoring
