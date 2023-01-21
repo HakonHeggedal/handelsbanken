@@ -19,10 +19,17 @@ class ShopServiceTest {
     ShopService shopService = new ShopService();
 
     @Test
-    void calculateCost() {
+    void calculateCostStandardExample() {
         List<String> watchIDs = Arrays.asList("001", "002", "001", "004", "003");
         Cost cost = shopService.calculateCost(watchIDs);
         assertEquals(360, cost.price());
+    }
+
+    @Test
+    void calculateCostGroupPriceApplied() {
+        List<String> watchIDs = Arrays.asList("001", "001", "004", "001");
+        Cost cost = shopService.calculateCost(watchIDs);
+        assertEquals(230, cost.price());
     }
 
     @Test

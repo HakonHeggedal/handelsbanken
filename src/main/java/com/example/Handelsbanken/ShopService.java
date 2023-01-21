@@ -26,11 +26,11 @@ public class ShopService {
                         Function.identity(),
                         Collectors.counting()));
 
-        watchCounts.forEach((watch, count) -> {
+        Long totalCost = watchCounts.entrySet().stream()
+                .map(watchCountEntry -> getWatchGroupPrice(watchCountEntry.getKey(), watchCountEntry.getValue()))
+                .reduce(0L, Long::sum);
 
-        });
-
-        return new Cost(0);
+        return new Cost(totalCost);
     }
 
     public long getWatchGroupPrice(Watch watch, long count) {
@@ -46,7 +46,7 @@ public class ShopService {
             case "002" -> michaelKors;
             case "003" -> swatch;
             case "004" -> casio;
-            default -> null; //TODO: logge denne penere
+            default -> null; //TODO: logge denne
         };
     }
 
