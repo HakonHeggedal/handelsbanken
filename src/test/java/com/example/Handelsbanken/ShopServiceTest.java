@@ -1,10 +1,9 @@
 package com.example.Handelsbanken;
 
-import com.example.Handelsbanken.objects.Cost;
-import com.example.Handelsbanken.objects.Watch;
+import com.example.Handelsbanken.Objects.Cost;
+import com.example.Handelsbanken.Objects.Watch;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -46,5 +45,12 @@ class ShopServiceTest {
     void getWatchMichaelRolex() {
         Watch watch = shopService.getWatch(shopService.rolex.watchID());
         assertEquals(shopService.rolex, watch);
+    }
+
+    @Test
+    void getGroupPrice() {
+        long groupPrice = shopService.getWatchGroupPrice(shopService.rolex, 100);
+
+        assertEquals(6700, groupPrice);
     }
 }

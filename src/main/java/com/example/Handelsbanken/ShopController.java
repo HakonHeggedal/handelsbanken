@@ -1,6 +1,6 @@
 package com.example.Handelsbanken;
 
-import com.example.Handelsbanken.objects.Cost;
+import com.example.Handelsbanken.Objects.Cost;
 import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
