@@ -17,11 +17,16 @@ class ShopController {
         this.service = service;
     }
 
-
     @PostMapping("checkout")
     @ResponseStatus(HttpStatus.CREATED)
     public Cost findCost(@RequestBody @NonNull ArrayList<String> watchIDs) {
         return service.calculateCost(watchIDs);
+    }
+
+    @GetMapping("ping")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String ping() {
+        return "pong";
     }
 
 }
