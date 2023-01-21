@@ -24,7 +24,7 @@ class ShopController {
     }
 
     @GetMapping("ping")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public String ping() {
         return "pong";
     }
